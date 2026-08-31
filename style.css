@@ -1,919 +1,682 @@
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-
-body{
-font-family:Inter,Arial,sans-serif;
-color:#17212b;
-background:#fff;
-line-height:1.65
-}
-
-a{text-decoration:none;color:inherit}
-
-.container{
-width:min(1160px,92%);
-margin:auto
-}
-
-/* TOP BAR */
-.topbar{
-background:#071a2d;
-color:#dce8f3;
-font-size:13px
-}
-
-.topbar-inner{
-display:flex;
-justify-content:space-between;
-padding:8px 0
-}
-
-.topbar a{color:#fff}
-
-.sep{
-opacity:.35;
-margin:0 12px
-}
-
-/* HEADER */
-.header{
-background:#fff;
-position:sticky;
-top:0;
-z-index:20;
-box-shadow:0 3px 20px #071a2d12
-}
-
-.nav{
-min-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:11px
-}
-
-.brand-mark{
-display:grid;
-place-items:center;
-background:#0b63ce;
-color:#fff;
-font-family:Montserrat;
-font-weight:800;
-width:44px;
-height:44px;
-border-radius:8px
-}
-
-.brand strong{
-display:block;
-font-family:Montserrat;
-font-size:20px;
-line-height:1
-}
-
-.brand small{
-display:block;
-color:#71808c;
-font-size:10px;
-letter-spacing:1px;
-margin-top:5px
-}
-
-/* NAVIGATION */
-.nav-links{
-display:flex;
-gap:25px;
-font-weight:600;
-font-size:14px
-}
-
-.nav-links a{
-padding:27px 0;
-position:relative
-}
-
-.nav-links a:after{
-content:"";
-position:absolute;
-bottom:17px;
-left:0;
-width:0;
-height:2px;
-background:#0b63ce;
-transition:.25s
-}
-
-.nav-links a:hover:after,
-.nav-links .active:after{
-width:100%
-}
-
-.menu-toggle{
-display:none;
-background:none;
-border:0;
-font-size:28px
-}
-
-/* HERO */
-.hero{
-min-height:650px;
-position:relative;
-background:linear-gradient(100deg,#041525 0%,#082b4a 48%,#0b4168 100%);
-overflow:hidden
-}
-
-.hero:after{
-content:"";
-position:absolute;
-right:-150px;
-top:-160px;
-width:600px;
-height:600px;
-border:90px solid #ffffff09;
-border-radius:50%
-}
-
-.hero-overlay{
-position:absolute;
-inset:0;
-background:linear-gradient(90deg,#041525f5,#062642b5 55%,#0b416866)
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-padding:105px 0 60px;
-color:white;
-max-width:850px
-}
-
-.eyebrow,
-.section-kicker{
-color:#3b9cff;
-font-size:12px;
-font-weight:800;
-letter-spacing:2px
-}
-
-.hero h1{
-font:800 clamp(42px,6vw,72px)/1.05 Montserrat;
-margin:18px 0 22px;
-letter-spacing:-2px
-}
-
-.hero h1 span{color:#3b9cff}
-
-.hero p{
-font-size:18px;
-max-width:720px;
-color:#d7e4ee
-}
-
-.hero-actions{
-display:flex;
-gap:13px;
-margin:32px 0 55px
-}
-
-/* BUTTONS */
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:12px 23px;
-border-radius:6px;
-font-weight:800;
-font-size:14px;
-transition:.2s
-}
-
-.btn-primary{
-background:#0b63ce;
-color:#fff
-}
-
-.btn-primary:hover{
-transform:translateY(-2px);
-background:#0957b6;
-filter:brightness(1.08)
-}
-
-.btn-outline{
-border:1px solid #ffffff55;
-color:white
-}
-
-.btn-outline:hover{
-background:#fff;
-color:#082b4a
-}
-
-/* HERO STATS */
-.hero-stats{
-display:flex;
-gap:45px
-}
-
-.hero-stats div{
-border-left:1px solid #ffffff35;
-padding-left:18px
-}
-
-.hero-stats b{
-display:block;
-font:800 21px Montserrat
-}
-
-.hero-stats span{
-font-size:12px;
-color:#aebfcf
-}
-
-/* TRUST STRIP */
-.trust-strip{
-background:#0b63ce;
-color:#fff
-}
-
-.trust-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-padding:21px 0;
-gap:20px
-}
-
-.trust-grid div{
-border-right:1px solid #ffffff33;
-padding-right:20px
-}
-
-.trust-grid div:last-child{border:0}
-
-.trust-grid strong{
-display:block;
-font-size:13px
-}
-
-.trust-grid span{
-font-size:11px;
-opacity:.75
-}
-
-/* SECTIONS */
-.section{
-padding:90px 0
-}
-
-.two-col{
-display:grid;
-grid-template-columns:1.15fr .85fr;
-gap:75px;
-align-items:center
-}
-
-.section h2{
-font:800 clamp(31px,4vw,45px)/1.15 Montserrat;
-letter-spacing:-1px;
-margin:10px 0 18px;
-color:#14212b
-}
-
-.section-heading{
-max-width:700px;
-margin:0 auto 45px;
-text-align:center
-}
-
-.section-heading p{
-color:#687783
-}
-
-/* MISSION */
-.mission-card{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:18px;
-margin-top:32px
-}
-
-.mission-card>div{
-border-top:3px solid #0b63ce;
-padding:17px;
-background:#f1f7fd
-}
-
-.mission-card span{
-font-size:11px;
-font-weight:800;
-letter-spacing:1.5px;
-color:#0b63ce
-}
-
-.mission-card p{
-font-size:13px;
-margin-top:7px
-}
-
-/* ABOUT */
-.about-panel{
-background:#082b4a;
-color:#fff;
-padding:42px;
-border-radius:10px;
-position:relative;
-overflow:hidden
-}
-
-.about-panel:after{
-content:"OAG";
-position:absolute;
-right:-20px;
-bottom:-45px;
-font:900 120px Montserrat;
-color:#ffffff07
-}
-
-.panel-icon{
-font-size:35px;
-color:#3b9cff
-}
-
-.about-panel h3{
-font:700 25px Montserrat;
-margin:12px 0
-}
-
-.about-panel p{
-color:#b9cddd;
-font-size:14px
-}
-
-.values{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-top:25px
-}
-
-.values span{
-border:1px solid #ffffff20;
-padding:5px 10px;
-border-radius:30px;
-font-size:11px;
-color:#d8e5ef
-}
-
-/* DARK SECTION */
-.dark-section{
-background:#082b4a;
-color:#fff
-}
-
-.light h2{color:#fff}
-
-.light p{color:#aebfce}
-
-/* SERVICES */
-.service-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
-}
-
-.service-card{
-background:#0d395d;
-border:1px solid #ffffff0d;
-padding:28px;
-border-radius:8px;
-transition:.25s
-}
-
-.service-card:hover{
-transform:translateY(-5px);
-border-color:#0b63ce66;
-background:#104368
-}
-
-.service-card .icon{
-font-size:29px;
-margin-bottom:12px
-}
-
-.service-card h3{
-font:700 19px Montserrat
-}
-
-.service-card p{
-color:#aebfce;
-font-size:13px;
-margin:10px 0 17px
-}
-
-.service-card a{
-color:#3b9cff;
-font-size:12px;
-font-weight:800
-}
-
-/* SECTORS */
-.sector-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px
-}
-
-.sector{
-border:1px solid #dce7ef;
-padding:23px;
-min-height:170px;
-position:relative;
-transition:.2s
-}
-
-.sector:hover{
-box-shadow:0 10px 30px #082b4a12;
-transform:translateY(-3px);
-border-color:#0b63ce
-}
-
-.sector span{
-font-size:11px;
-color:#0b63ce;
-font-weight:800
-}
-
-.sector h3{
-font:700 17px Montserrat;
-margin:10px 0
-}
-
-.sector p{
-font-size:12px;
-color:#6e7c86
-}
-
-/* PRODUCTS */
-.products{
-background:#f1f7fd
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px
-}
-
-.product{
-background:white;
-border:1px solid #dfe8ee;
-border-radius:8px;
-overflow:hidden
-}
-
-.product-image{
-height:160px;
-background-size:cover;
-background-position:center;
-position:relative
-}
-
-.product-image:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(135deg,#082b4a,#0b63ce55)
-}
-
-.electrical{
-background:
-radial-gradient(circle at 50% 35%,#d9e0e4 0 7%,transparent 8%),
-linear-gradient(135deg,#0c385b 0 35%,#51788f 36% 60%,#152b3d 61%)
-}
-
-.mechanical{
-background:
-radial-gradient(circle at 45% 45%,#89959b 0 18%,#334b5d 19% 27%,transparent 28%),
-linear-gradient(135deg,#102b40,#647c8c)
-}
-
-.safety{
-background:
-radial-gradient(circle at 50% 38%,#0b63ce 0 16%,transparent 17%),
-linear-gradient(135deg,#0d395d,#657d8d)
-}
-
-.tools{
-background:
-radial-gradient(circle at 35% 55%,#a9b3b7 0 12%,transparent 13%),
-linear-gradient(135deg,#112e44,#596f7e)
-}
-
-.product h3{
-font:700 17px Montserrat;
-padding:17px 17px 5px
-}
-
-.product p{
-font-size:12px;
-color:#6c7a84;
-padding:0 17px 19px
-}
-
-/* EXPERIENCE */
-.experience{
-background:#f1f7fd
-}
-
-.client-list{
-margin-top:25px;
-display:grid;
-gap:9px
-}
-
-.client-list div{
-background:#fff;
-border-left:3px solid #0b63ce;
-padding:12px 15px
-}
-
-.client-list b{
-display:block;
-font-size:13px
-}
-
-.client-list span{
-font-size:11px;
-color:#73818b
-}
-
-/* QUOTE */
-.quote-panel{
-background:#082b4a;
-color:#fff;
-padding:45px;
-border-radius:9px
-}
-
-.quote-mark{
-font:800 70px Georgia;
-color:#3b9cff;
-line-height:.5
-}
-
-.quote-panel h3{
-font:700 25px/1.25 Montserrat;
-margin:18px 0
-}
-
-.quote-panel p{
-font-size:13px;
-color:#b7c8d6;
-margin-bottom:25px
-}
-
-/* MANAGEMENT */
-.management-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px
-}
-
-.person{
-display:flex;
-gap:20px;
-padding:28px;
-background:#f1f7fd;
-border-radius:8px
-}
-
-.person-avatar{
-min-width:72px;
-height:72px;
-border-radius:50%;
-background:#082b4a;
-color:#3b9cff;
-display:grid;
-place-items:center;
-font:800 15px Montserrat
-}
-
-.person span{
-font-size:10px;
-color:#0b63ce;
-font-weight:800;
-letter-spacing:1px
-}
-
-.person h3{
-font:700 19px Montserrat;
-margin:4px 0
-}
-
-.person p{
-font-size:12px;
-color:#667681;
-margin-bottom:10px
-}
-
-.person strong{
-font-size:12px
-}
-
-/* CTA */
-.cta{
-background:#0b63ce;
-color:#fff;
-padding:55px 0
-}
-
-.cta-inner{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:30px
-}
-
-.cta h2{
-font:800 34px Montserrat;
-margin:6px 0;
-color:#fff
-}
-
-.cta p{
-font-size:14px;
-opacity:.8
-}
-
-.btn-light{
-background:#071a2d;
-color:#fff
-}
-
-.btn-light:hover{
-background:#041525
-}
-
-/* CONTACT */
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1.3fr .8fr;
-gap:18px
-}
-
-.contact-card{
-border:1px solid #dce7ef;
-padding:25px;
-border-radius:8px
-}
-
-.contact-card h3{
-font:700 18px Montserrat;
-margin-bottom:9px
-}
-
-.contact-card p{
-font-size:12px;
-color:#687883
-}
-
-.contact-card a{
-color:#075bbd;
-font-weight:700
-}
-
-/* FOOTER */
-footer{
-background:#041525;
-color:#b3c3cf;
-padding:35px 0
-}
-
-.footer-inner{
-display:grid;
-grid-template-columns:1fr auto 1fr;
-align-items:center;
-gap:20px
-}
-
-.footer-brand{
-font:800 22px Montserrat;
-color:#fff
-}
-
-.footer-brand span{
-color:#3b9cff
-}
-
-.footer-inner p{
-font-size:11px
-}
-
-.footer-links{
-display:flex;
-gap:20px;
-font-size:12px
-}
-
-.footer-links a:hover{
-color:#3b9cff
-}
-
-.copyright{text-align:right}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-right:22px;
-bottom:22px;
-width:52px;
-height:52px;
-border-radius:50%;
-display:grid;
-place-items:center;
-background:#20b858;
-color:#fff;
-font-weight:800;
-z-index:30;
-box-shadow:0 8px 25px #0004
-}
-
-/* REVEAL */
-.reveal{
-opacity:0;
-transform:translateY(20px);
-transition:.7s
-}
-
-.reveal.visible{
-opacity:1;
-transform:none
-}
-
-/* TABLET */
-@media(max-width:850px){
-
-.topbar-inner{
-padding:8px 0
-}
-
-.topbar-inner>span{
-display:none
-}
-
-.topbar-inner>div{
-width:100%;
-text-align:center
-}
-
-.nav-links{
-display:none;
-position:absolute;
-top:76px;
-left:0;
-right:0;
-background:#fff;
-flex-direction:column;
-gap:0;
-padding:10px 5%;
-box-shadow:0 10px 20px #0001
-}
-
-.nav-links.open{
-display:flex
-}
-
-.nav-links a{
-padding:11px 0
-}
-
-.nav-links a:after{
-bottom:5px
-}
-
-.menu-toggle{
-display:block
-}
-
-.hero{
-min-height:600px
-}
-
-.hero-content{
-padding:85px 0 50px
-}
-
-.hero-stats{
-gap:18px
-}
-
-.hero-stats b{
-font-size:17px
-}
-
-.two-col{
-grid-template-columns:1fr;
-gap:40px
-}
-
-.service-grid{
-grid-template-columns:1fr 1fr
-}
-
-.sector-grid{
-grid-template-columns:1fr 1fr
-}
-
-.product-grid{
-grid-template-columns:1fr 1fr
-}
-
-.management-grid{
-grid-template-columns:1fr
-}
-
-.contact-grid{
-grid-template-columns:1fr
-}
-
-.footer-inner{
-grid-template-columns:1fr;
-text-align:center
-}
-
-.copyright{
-text-align:center
-}
-
-.footer-links{
-justify-content:center
-}
-
-.cta-inner{
-flex-direction:column;
-align-items:flex-start
-}
-
-}
-
-/* MOBILE */
-@media(max-width:520px){
-
-.hero h1{
-font-size:40px
-}
-
-.hero p{
-font-size:15px
-}
-
-.hero-actions{
-flex-direction:column
-}
-
-.hero-stats{
-display:grid;
-grid-template-columns:1fr 1fr
-}
-
-.trust-grid{
-grid-template-columns:1fr 1fr
-}
-
-.trust-grid div:nth-child(2){
-border:0
-}
-
-.mission-card{
-grid-template-columns:1fr
-}
-
-.service-grid,
-.sector-grid,
-.product-grid{
-grid-template-columns:1fr
-}
-
-.section{
-padding:65px 0
-}
-
-.about-panel,
-.quote-panel{
-padding:30px
-}
-
-.person{
-flex-direction:column
-}
-
-.brand small{
-font-size:9px
-}
-
-}
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>OAG Services & Traders | Industrial Supplies & Services</title> <meta name="description" content="OAG Services & Traders provides reliable industrial supplies, safety equipment, NDT, PWHT, mechanical, electrical, maintenance and manpower solutions."> <!-- Google Fonts --> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet"> <link rel="stylesheet" href="style.css"> </head> <body> <header class="header"> <div class="container nav">
+<a href="#home" class="brand">
+  <span class="brand-mark">OAG</span>
+
+  <span class="brand-text">
+    <strong>OAG</strong>
+    <small>Services & Traders</small>
+  </span>
+</a>
+
+<nav class="nav-links">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#products">Products</a>
+  <a href="#sectors">Industries</a>
+  <a href="#experience">Experience</a>
+  <a href="#management">Management</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<a href="#contact" class="nav-cta">Get a Quote</a>
+
+</div> </header> <section class="hero" id="home"> <div class="hero-pattern"></div> <div class="hero-overlay"></div> <div class="container hero-content">
+<div class="eyebrow">
+  OAG SERVICES & TRADERS
+</div>
+
+<h1>
+  Reliable Industrial
+  <span>Supplies & Services</span>
+</h1>
+
+<p>
+  A trusted general order supplier delivering industrial,
+  mechanical, electrical, safety, NDT, heat treatment,
+  maintenance and manpower solutions.
+</p>
+
+<div class="hero-actions">
+
+  <a href="#services" class="btn btn-primary">
+    Explore Our Services
+    <span>→</span>
+  </a>
+
+  <a href="#contact" class="btn btn-outline">
+    Contact Us
+  </a>
+
+</div>
+
+<div class="hero-stats">
+
+  <div>
+    <strong>32+</strong>
+    <span>Years of Expertise</span>
+  </div>
+
+  <div>
+    <strong>8+</strong>
+    <span>Industry Sectors</span>
+  </div>
+
+  <div>
+    <strong>6+</strong>
+    <span>Corporate Clients</span>
+  </div>
+
+</div>
+
+</div> </section> <section class="trust-strip"> <div class="container trust-grid">
+<div>
+  <strong>Industrial Supplies</strong>
+  <span>Reliable sourcing & supply</span>
+</div>
+
+<div>
+  <strong>Technical Services</strong>
+  <span>NDT, PWHT & maintenance</span>
+</div>
+
+<div>
+  <strong>Safety Solutions</strong>
+  <span>Industrial safety equipment</span>
+</div>
+
+<div>
+  <strong>Manpower Support</strong>
+  <span>Skilled technical teams</span>
+</div>
+
+</div> </section> <section class="section" id="about"> <div class="container two-col">
+<div class="about-content">
+
+  <div class="section-kicker">
+    ABOUT OAG
+  </div>
+
+  <h2>
+    Reliable Solutions for
+    <span>Industrial Requirements</span>
+  </h2>
+
+  <p class="lead">
+    OAG Services & Traders provides dependable industrial,
+    technical and general order supply solutions for
+    industrial and commercial requirements.
+  </p>
+
+  <p>
+    We focus on quality products, responsive service,
+    customer satisfaction and long-term business
+    relationships. Our aim is to provide practical,
+    reliable and cost-effective solutions to our clients.
+  </p>
+
+  <div class="about-points">
+
+    <div>
+      <span class="point-icon">✓</span>
+      <div>
+        <strong>Quality Focused</strong>
+        <small>Reliable products and professional service.</small>
+      </div>
+    </div>
+
+    <div>
+      <span class="point-icon">✓</span>
+      <div>
+        <strong>Customer Oriented</strong>
+        <small>Solutions built around client requirements.</small>
+      </div>
+    </div>
+
+    <div>
+      <span class="point-icon">✓</span>
+      <div>
+        <strong>Technical Capability</strong>
+        <small>Experienced technical and industrial support.</small>
+      </div>
+    </div>
+
+    <div>
+      <span class="point-icon">✓</span>
+      <div>
+        <strong>Long-Term Commitment</strong>
+        <small>Building dependable business relationships.</small>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="about-panel">
+
+  <div class="panel-glow"></div>
+
+  <div class="panel-icon">⚙</div>
+
+  <span class="panel-label">OUR PURPOSE</span>
+
+  <h3>Mission</h3>
+
+  <p>
+    To be the preferred choice of partners and customers
+    by providing reliable and superior products and
+    services to their satisfaction.
+  </p>
+
+  <div class="panel-divider"></div>
+
+  <h3>Vision</h3>
+
+  <p>
+    To become a supply and services company that best
+    anticipates, recognizes and surpasses customer
+    expectations.
+  </p>
+
+  <div class="panel-watermark">
+    OAG
+  </div>
+
+</div>
+
+</div> </section> <section class="section dark-section" id="services"> <div class="container">
+<div class="section-heading light">
+
+  <div class="section-kicker">
+    WHAT WE DO
+  </div>
+
+  <h2>Our Core Services</h2>
+
+  <p>
+    Integrated supply and technical services designed
+    to support industrial and commercial operations.
+  </p>
+
+</div>
+
+
+<div class="service-grid">
+
+  <article class="service-card">
+
+    <div class="service-number">01</div>
+    <div class="icon">⚡</div>
+
+    <h3>Electrical & Electronics</h3>
+
+    <p>
+      Electrical supplies, motors, breakers, cables,
+      lighting, automation, IT, CCTV, UPS and related
+      industrial equipment.
+    </p>
+
+    <a href="#contact">
+      Request Supply <span>→</span>
+    </a>
+
+  </article>
+
+
+  <article class="service-card">
+
+    <div class="service-number">02</div>
+    <div class="icon">⚙</div>
+
+    <h3>Mechanical & Piping</h3>
+
+    <p>
+      Valves, pipes, hydraulic and pneumatic equipment,
+      shafts, gears, bearings, fittings and workshop items.
+    </p>
+
+    <a href="#contact">
+      Request Supply <span>→</span>
+    </a>
+
+  </article>
+
+
+  <article class="service-card">
+
+    <div class="service-number">03</div>
+    <div class="icon">🔥</div>
+
+    <h3>NDT & Heat Treatment</h3>
+
+    <p>
+      PWHT machines, temperature recorders, controllers,
+      thermocouples and related inspection equipment.
+    </p>
+
+    <a href="#contact">
+      Learn More <span>→</span>
+    </a>
+
+  </article>
+
+
+  <article class="service-card">
+
+    <div class="service-number">04</div>
+    <div class="icon">🛠</div>
+
+    <h3>Repair & Maintenance</h3>
+
+    <p>
+      PWHT, NDT, temperature control, radiographic testing,
+      ultrasonic testing and machine shop services.
+    </p>
+
+    <a href="#contact">
+      Get Service <span>→</span>
+    </a>
+
+  </article>
+
+
+  <article class="service-card">
+
+    <div class="service-number">05</div>
+    <div class="icon">🧰</div>
+
+    <h3>Hardware & General Supplies</h3>
+
+    <p>
+      Hardware, sanitary, stationery, janitorial, cleaning,
+      kitchen, furniture, uniforms and office supplies.
+    </p>
+
+    <a href="#contact">
+      Request Quote <span>→</span>
+    </a>
+
+  </article>
+
+
+  <article class="service-card">
+
+    <div class="service-number">06</div>
+    <div class="icon">👷</div>
+
+    <h3>Manpower Services</h3>
+
+    <p>
+      Welding and coating inspectors, QC engineers,
+      inspection engineers, NDT technicians, welders
+      and specialist teams.
+    </p>
+
+    <a href="#contact">
+      Hire a Team <span>→</span>
+    </a>
+
+  </article>
+
+
+  <article class="service-card">
+
+    <div class="service-number">07</div>
+    <div class="icon">🦺</div>
+
+    <h3>Safety Equipment</h3>
+
+    <p>
+      Safety helmets, gloves, reflective jackets,
+      harnesses, goggles, face shields and industrial
+      safety products.
+    </p>
+
+    <a href="#contact">
+      Safety Products <span>→</span>
+    </a>
+
+  </article>
+
+
+  <article class="service-card">
+
+    <div class="service-number">08</div>
+    <div class="icon">🧯</div>
+
+    <h3>Fire Safety</h3>
+
+    <p>
+      Fire extinguishers and essential fire safety
+      equipment for industrial and commercial applications.
+    </p>
+
+    <a href="#contact">
+      Request Quote <span>→</span>
+    </a>
+
+  </article>
+
+</div>
+
+</div> </section> <section class="section products" id="products"> <div class="container">
+<div class="section-heading">
+
+  <div class="section-kicker">
+    PRODUCTS
+  </div>
+
+  <h2>Safety & Industrial Products</h2>
+
+  <p>
+    We supply a wide range of industrial and workplace
+    safety products for demanding environments.
+  </p>
+
+</div>
+
+
+<div class="product-grid">
+
+  <div class="product">
+
+    <div class="product-image helmet-image">
+      <span>SAFETY HELMETS</span>
+    </div>
+
+    <div class="product-content">
+      <h3>Safety Helmets</h3>
+
+      <p>
+        Industrial safety helmets designed for
+        workplace protection.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="product">
+
+    <div class="product-image gloves-image">
+      <span>SAFETY GLOVES</span>
+    </div>
+
+    <div class="product-content">
+      <h3>Safety Gloves</h3>
+
+      <p>
+        Protective gloves for industrial and
+        general workplace applications.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="product">
+
+    <div class="product-image jacket-image">
+      <span>REFLECTIVE JACKETS</span>
+    </div>
+
+    <div class="product-content">
+      <h3>Reflective Jackets</h3>
+
+      <p>
+        High-visibility reflective safety jackets
+        for industrial workers.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="product">
+
+    <div class="product-image harness-image">
+      <span>SAFETY HARNESSES</span>
+    </div>
+
+    <div class="product-content">
+      <h3>Safety Harnesses</h3>
+
+      <p>
+        Fall protection harnesses for work-at-height
+        applications.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="product">
+
+    <div class="product-image extinguisher-image">
+      <span>FIRE EXTINGUISHERS</span>
+    </div>
+
+    <div class="product-content">
+      <h3>Fire Extinguishers</h3>
+
+      <p>
+        Fire protection equipment for industrial
+        and commercial environments.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="product">
+
+    <div class="product-image goggles-image">
+      <span>GOGGLES & FACE SHIELDS</span>
+    </div>
+
+    <div class="product-content">
+      <h3>Goggles & Face Shields</h3>
+
+      <p>
+        Eye and face protection equipment for
+        industrial environments.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</div> </section> <section class="section" id="sectors"> <div class="container">
+<div class="section-heading">
+
+  <div class="section-kicker">
+    INDUSTRIES
+  </div>
+
+  <h2>Industries We Serve</h2>
+
+  <p>
+    Supporting businesses across a range of industrial
+    and engineering sectors.
+  </p>
+
+</div>
+
+
+<div class="sector-grid">
+
+  <div class="sector">
+    <span>01</span>
+    <div class="sector-icon">◈</div>
+    <h3>Oil & Gas</h3>
+    <p>Industrial supplies and technical support.</p>
+  </div>
+
+  <div class="sector">
+    <span>02</span>
+    <div class="sector-icon">◈</div>
+    <h3>Chemical & Petrochemical</h3>
+    <p>Equipment, parts and specialist services.</p>
+  </div>
+
+  <div class="sector">
+    <span>03</span>
+    <div class="sector-icon">◈</div>
+    <h3>Power & Cement</h3>
+    <p>Industrial supply and maintenance requirements.</p>
+  </div>
+
+  <div class="sector">
+    <span>04</span>
+    <div class="sector-icon">◈</div>
+    <h3>Fertilizer & Infrastructure</h3>
+    <p>General order and technical support.</p>
+  </div>
+
+  <div class="sector">
+    <span>05</span>
+    <div class="sector-icon">◈</div>
+    <h3>Engineering & Construction</h3>
+    <p>Mechanical, electrical and manpower solutions.</p>
+  </div>
+
+  <div class="sector">
+    <span>06</span>
+    <div class="sector-icon">◈</div>
+    <h3>Textile Industry</h3>
+    <p>Industrial supplies and technical services.</p>
+  </div>
+
+  <div class="sector">
+    <span>07</span>
+    <div class="sector-icon">◈</div>
+    <h3>Manufacturing</h3>
+    <p>Equipment, spares and general supplies.</p>
+  </div>
+
+  <div class="sector">
+    <span>08</span>
+    <div class="sector-icon">◈</div>
+    <h3>Industrial Safety</h3>
+    <p>Workplace safety and protection products.</p>
+  </div>
+
+</div>
+
+</div> </section> <section class="section experience" id="experience"> <div class="container two-col">
+<div>
+
+  <div class="section-kicker">
+    OUR CLIENTS
+  </div>
+
+  <h2>Working Experience</h2>
+
+  <p class="lead">
+    OAG Services & Traders has worked with reputable
+    industrial and engineering organizations.
+  </p>
+
+  <div class="client-list">
+
+    <div>
+      <span>01</span>
+      <b>Descon Engineering Limited</b>
+    </div>
+
+    <div>
+      <span>02</span>
+      <b>Izhar Steel (Pvt) Ltd</b>
+    </div>
+
+    <div>
+      <span>03</span>
+      <b>Ravi Green Engineering (Pvt.) Ltd</b>
+    </div>
+
+    <div>
+      <span>04</span>
+      <b>AJC Engineering Pvt. Ltd</b>
+    </div>
+
+    <div>
+      <span>05</span>
+      <b>Testing Specialist Pvt. Ltd</b>
+    </div>
+
+    <div>
+      <span>06</span>
+      <b>Albario Engineering (Pvt) Ltd</b>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="quote-panel">
+
+  <span class="quote-mark">“</span>
+
+  <h3>
+    Reliable Supply.
+    Technical Capability.
+    Customer Commitment.
+  </h3>
+
+  <p>
+    Our approach is centered on delivering dependable
+    products and services while maintaining focus on
+    quality, safety, cost and schedule.
+  </p>
+
+  <a href="#contact" class="btn btn-primary">
+    Discuss Your Requirement
+    <span>→</span>
+  </a>
+
+</div>
+
+</div> </section> <section class="section" id="management"> <div class="container">
+<div class="section-heading">
+
+  <div class="section-kicker">
+    MANAGEMENT
+  </div>
+
+  <h2>Management Directory</h2>
+
+  <p>
+    Experienced leadership supporting OAG's technical
+    and business operations.
+  </p>
+
+</div>
+
+
+<div class="management-grid">
+
+  <article class="person">
+
+    <div class="person-avatar">
+      AGH
+    </div>
+
+    <div class="person-content">
+
+      <span>CHIEF EXECUTIVE OFFICER</span>
+
+      <h3>
+        Mr. Abdul Ghafoor Haidri
+      </h3>
+
+      <p>
+        Heat Treatment Specialist with more than
+        32 years of experience with national and
+        multinational companies.
+      </p>
+
+      <a href="
