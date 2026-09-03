@@ -1,0 +1,16 @@
+images
+│
+├── logo.png
+├── hero.jpg
+├── welcome.jpg
+├── welcome-video.mp4
+├── company.jpg
+├── industry.jpg
+│
+└── products
+    ├── safety-helmet.jpg
+    ├── safety-gloves.jpg
+    ├── reflective-jacket.jpg
+    ├── safety-harness.jpg
+    ├── fire-extinguisher.jpg
+    └── goggles-face-shield.jpg
