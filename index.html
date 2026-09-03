@@ -4,1152 +4,950 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>OAG Services & Traders | Industrial & General Order Supplier</title>
+  <title>OAG Services & Traders | Industrial Solutions</title>
 
-  <meta name="description" content="OAG Services & Traders provides industrial supplies, safety equipment, electrical, mechanical, piping, machinery, hardware, packaging and general order supply solutions.">
+  <meta name="description"
+        content="OAG Services & Traders provides industrial products, technical services, PWHT equipment, maintenance and skilled manpower across Pakistan.">
 
-  <meta name="keywords" content="OAG Services Traders, industrial supplier Pakistan, safety equipment, safety helmets, safety gloves, reflective jackets, industrial products, packaging products, general order supplier">
+  <style>
+    :root {
+      --dark-blue: #031a46;
+      --blue: #075ccf;
+      --light-blue: #2583f7;
+      --soft-blue: #eef6ff;
+      --white: #ffffff;
+      --text: #17233c;
+      --muted: #63708a;
+      --border: #d9e5f5;
+      --green: #25d366;
+      --shadow: 0 18px 50px rgba(3, 35, 92, 0.13);
+    }
 
-  <meta name="author" content="OAG Services & Traders">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <link rel="stylesheet" href="style.css">
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    .topbar {
+      padding: 9px 0;
+      background: var(--dark-blue);
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--dark-blue);
+      color: var(--white);
+      border: 5px solid #dceaff;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .logo strong {
+      display: block;
+      color: var(--dark-blue);
+      font-size: 18px;
+    }
+
+    .logo small {
+      display: block;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    nav a {
+      padding: 10px 11px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+      background: var(--soft-blue);
+    }
+
+    .nav-button {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    nav .nav-button:hover {
+      color: var(--white);
+      background: var(--light-blue);
+    }
+
+    .menu-button {
+      display: none;
+      padding: 8px 12px;
+      border: 0;
+      border-radius: 9px;
+      background: var(--soft-blue);
+      color: var(--dark-blue);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .hero {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(37, 131, 247, 0.45), transparent 30%),
+        linear-gradient(125deg, #021333, #063b91);
+    }
+
+    .hero-grid {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 55px;
+      padding: 70px 0;
+    }
+
+    .label {
+      display: inline-block;
+      color: var(--light-blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      margin: 18px 0;
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+    }
+
+    .hero h1 span {
+      color: #62adff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #dce9ff;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 21px;
+      border: 2px solid transparent;
+      border-radius: 11px;
+      font-weight: 800;
+    }
+
+    .button-primary {
+      background: var(--light-blue);
+      color: var(--white);
+    }
+
+    .button-outline {
+      border-color: #9cc8ff;
+      color: var(--white);
+    }
+
+    .hero-image img {
+      border: 8px solid rgba(255, 255, 255, 0.12);
+      border-radius: 25px;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .soft-section {
+      background: var(--soft-blue);
+    }
+
+    .section-heading {
+      max-width: 750px;
+      margin-bottom: 38px;
+    }
+
+    .section-heading h2 {
+      margin: 8px 0 12px;
+      color: var(--dark-blue);
+      font-size: clamp(34px, 5vw, 51px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .section-heading p,
+    .card p {
+      color: var(--muted);
+    }
+
+    .grid-three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 9px 30px rgba(3, 35, 92, 0.07);
+    }
+
+    .card img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 23px;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: var(--dark-blue);
+      font-size: 21px;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .check-list {
+      margin: 24px 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      margin: 12px 0;
+      padding-left: 32px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      padding: 27px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--blue);
+      border-radius: 15px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      color: var(--dark-blue);
+    }
+
+    .service ul {
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .industries {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .industry {
+      padding: 13px 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: var(--dark-blue);
+      font-weight: 800;
+    }
+
+    .management-card {
+      padding: 30px;
+    }
+
+    .management-card small {
+      color: var(--blue);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .management-card h3 {
+      margin: 7px 0;
+      font-size: 25px;
+    }
+
+    .contact-info {
+      height: 100%;
+      padding: 32px;
+      background: var(--dark-blue);
+      color: var(--white);
+      border-radius: 20px;
+    }
+
+    .office {
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .quote-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .quote-form input,
+    .quote-form select,
+    .quote-form textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #bfd0e8;
+      border-radius: 10px;
+      font: inherit;
+    }
+
+    .quote-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .quote-form button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 55px 0 25px;
+      background: #021333;
+      color: #dce9ff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+      color: var(--white);
+    }
+
+    footer a {
+      display: block;
+      margin: 7px 0;
+    }
+
+    .copyright {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid #284773;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 200;
+      width: 62px;
+      height: 62px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 900px) {
+      .menu-button {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 18px;
+        right: 18px;
+        padding: 14px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-three {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-image {
+        max-width: 550px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        display: none;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .grid-three,
+      .services-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= TOP BAR ================= -->
-
-<div class="top-bar">
-  <div class="container top-content">
-
-    <div>
-      <span><i class="fa-solid fa-phone"></i> 0307-3284606</span>
-      <span><i class="fa-solid fa-envelope"></i> oagsat@gmail.com</span>
-    </div>
-
-    <div>
-      <span>Industrial • Safety • Packaging • General Supplies</span>
-    </div>
-
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>Industrial Supplies & Technical Services</span>
+    <span>0307-3284606 · oagsat@gmail.com</span>
   </div>
 </div>
 
+<header>
+  <div class="container navbar">
+    <a href="#home" class="logo">
+      <span class="logo-mark">OAG</span>
 
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-
-  <div class="container nav-wrapper">
-
-    <a href="index.html" class="logo-area">
-
-      <!-- Replace logo.png with your actual logo -->
-      <img src="images/logo.png" alt="OAG Services & Traders Logo">
-
-      <div class="logo-text">
-        <strong>OAG</strong>
-        <span>SERVICES & TRADERS</span>
-      </div>
-
+      <span>
+        <strong>OAG Services & Traders</strong>
+        <small>Quality. Reliability. Efficiency.</small>
+      </span>
     </a>
 
-
-    <button class="menu-toggle" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
 
     <nav id="mainMenu">
-
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="services.html">Services</a>
-      <a href="industries.html">Industries</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-
-      <a href="contact.html" class="nav-quote">
-        Get a Quote <i class="fa-solid fa-arrow-right"></i>
-      </a>
-
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#management">Management</a>
+      <a href="#contact" class="nav-button">Get a Quote</a>
     </nav>
-
   </div>
-
 </header>
 
+<main>
 
-<!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="label">Welcome to OAG Services & Traders</span>
 
-<section class="hero">
+        <h1>
+          Your trusted partner for
+          <span>industrial solutions.</span>
+        </h1>
 
-  <div class="hero-overlay"></div>
+        <p>
+          OAG supplies industrial products and provides technical,
+          maintenance and skilled manpower services to businesses
+          throughout Pakistan.
+        </p>
 
-  <div class="container hero-content">
-
-    <div class="hero-text">
-
-      <span class="hero-small">
-        <i class="fa-solid fa-shield-halved"></i>
-        RELIABLE INDUSTRIAL & GENERAL SUPPLY PARTNER
-      </span>
-
-      <h1>
-        Industrial Solutions
-        <span>You Can Trust.</span>
-      </h1>
-
-      <p>
-        OAG Services & Traders provides reliable industrial,
-        safety, electrical, mechanical, packaging and general
-        order supply solutions for businesses across Pakistan.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="products.html" class="btn btn-primary">
-          Explore Products
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-        <a href="contact.html" class="btn btn-outline">
-          Request a Quote
-        </a>
-
-      </div>
-
-      <div class="hero-points">
-
-        <div>
-          <i class="fa-solid fa-circle-check"></i>
-          Quality Products
-        </div>
-
-        <div>
-          <i class="fa-solid fa-circle-check"></i>
-          Reliable Supply
-        </div>
-
-        <div>
-          <i class="fa-solid fa-circle-check"></i>
-          Professional Service
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- WELCOME VIDEO -->
-
-    <div class="welcome-video-card">
-
-      <div class="video-window">
-
-        <!--
-        Put your welcome video here:
-        images/welcome-video.mp4
-
-        If video is not available yet, the fallback image will show.
-        -->
-
-        <video autoplay muted loop playsinline poster="images/welcome.jpg">
-          <source src="images/welcome-video.mp4" type="video/mp4">
-        </video>
-
-        <div class="video-message">
-
-          <div class="welcome-icon">
-            <i class="fa-solid fa-hand"></i>
-          </div>
-
-          <span>WELCOME TO OAG</span>
-
-          <h3>
-            Come In, Let Us Show You
-            Our Products.
-          </h3>
-
-          <a href="products.html">
-            View Products
-            <i class="fa-solid fa-arrow-right"></i>
+        <div class="buttons">
+          <a href="#products" class="button button-primary">
+            Explore Products →
           </a>
 
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= TRUST BAR ================= -->
-
-<section class="trust-bar">
-
-  <div class="container trust-grid">
-
-    <div>
-      <i class="fa-solid fa-shield-halved"></i>
-      <div>
-        <strong>Quality First</strong>
-        <small>Reliable Products</small>
-      </div>
-    </div>
-
-    <div>
-      <i class="fa-solid fa-truck-fast"></i>
-      <div>
-        <strong>Reliable Supply</strong>
-        <small>On-Time Delivery</small>
-      </div>
-    </div>
-
-    <div>
-      <i class="fa-solid fa-industry"></i>
-      <div>
-        <strong>Industrial Expertise</strong>
-        <small>Multiple Divisions</small>
-      </div>
-    </div>
-
-    <div>
-      <i class="fa-solid fa-headset"></i>
-      <div>
-        <strong>Professional Support</strong>
-        <small>Customer Focused</small>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= ABOUT PREVIEW ================= -->
-
-<section class="section about-preview">
-
-  <div class="container two-column">
-
-    <div class="about-image">
-
-      <div class="image-box">
-
-        <img
-          src="images/company.jpg"
-          alt="OAG Services and Traders industrial supply">
-
-        <div class="experience-card">
-
-          <i class="fa-solid fa-award"></i>
-
-          <div>
-            <strong>Trusted Partner</strong>
-            <span>Industrial Supply & Services</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <div class="about-text">
-
-      <span class="section-label">ABOUT OAG</span>
-
-      <h2>
-        Your Reliable Partner for
-        <span>Industrial Solutions</span>
-      </h2>
-
-      <p>
-        OAG SERVICES & TRADERS is a dynamic and vibrant company
-        committed to growing together with its customers.
-        We focus on flexible, nimble and committed solutions
-        that support our customers' requirements.
-      </p>
-
-      <p>
-        Our business covers general order supplies together
-        with electrical, electronics, automation, IT equipment,
-        mechanical, piping, machinery, hardware and miscellaneous
-        supplies.
-      </p>
-
-      <div class="about-features">
-
-        <div>
-          <i class="fa-solid fa-check"></i>
-          <span>Reliable Products & Services</span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-check"></i>
-          <span>Customer-Focused Solutions</span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-check"></i>
-          <span>Professional Project Support</span>
-        </div>
-
-        <div>
-          <i class="fa-solid fa-check"></i>
-          <span>Flexible Supply Solutions</span>
-        </div>
-
-      </div>
-
-      <a href="about.html" class="text-button">
-        Discover Our Company
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= PRODUCT CATEGORIES ================= -->
-
-<section class="section categories-section">
-
-  <div class="container">
-
-    <div class="section-heading center">
-
-      <span class="section-label">OUR PRODUCTS</span>
-
-      <h2>
-        Complete Supply
-        <span>Solutions</span>
-      </h2>
-
-      <p>
-        Explore our major product categories and supply divisions.
-      </p>
-
-    </div>
-
-
-    <div class="category-grid">
-
-
-      <!-- SAFETY -->
-
-      <a href="products.html#safety" class="category-card">
-
-        <div class="category-icon">
-          <i class="fa-solid fa-helmet-safety"></i>
-        </div>
-
-        <h3>Safety Equipment</h3>
-
-        <p>
-          Helmets, gloves, reflective jackets,
-          harnesses and workplace safety products.
-        </p>
-
-        <span>
-          Explore Category
-          <i class="fa-solid fa-arrow-right"></i>
-        </span>
-
-      </a>
-
-
-      <!-- ELECTRICAL -->
-
-      <a href="products.html#electrical" class="category-card">
-
-        <div class="category-icon">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-
-        <h3>Electrical & Electronics</h3>
-
-        <p>
-          Electrical equipment, electronics,
-          automation and IT supplies.
-        </p>
-
-        <span>
-          Explore Category
-          <i class="fa-solid fa-arrow-right"></i>
-        </span>
-
-      </a>
-
-
-      <!-- MECHANICAL -->
-
-      <a href="products.html#mechanical" class="category-card">
-
-        <div class="category-icon">
-          <i class="fa-solid fa-gears"></i>
-        </div>
-
-        <h3>Mechanical & Machinery</h3>
-
-        <p>
-          Machinery equipment, tools, spare parts,
-          valves, pumps and industrial components.
-        </p>
-
-        <span>
-          Explore Category
-          <i class="fa-solid fa-arrow-right"></i>
-        </span>
-
-      </a>
-
-
-      <!-- FIRE -->
-
-      <a href="products.html#fire" class="category-card">
-
-        <div class="category-icon">
-          <i class="fa-solid fa-fire-extinguisher"></i>
-        </div>
-
-        <h3>Fire Fighting</h3>
-
-        <p>
-          Fire extinguishers, fire safety equipment,
-          refilling and related supplies.
-        </p>
-
-        <span>
-          Explore Category
-          <i class="fa-solid fa-arrow-right"></i>
-        </span>
-
-      </a>
-
-
-      <!-- PACKAGING -->
-
-      <a href="products.html#packaging" class="category-card">
-
-        <div class="category-icon">
-          <i class="fa-solid fa-box-open"></i>
-        </div>
-
-        <h3>Packaging Products</h3>
-
-        <p>
-          Packaging solutions, customized orders
-          and business packaging requirements.
-        </p>
-
-        <span>
-          Explore Category
-          <i class="fa-solid fa-arrow-right"></i>
-        </span>
-
-      </a>
-
-
-      <!-- HARDWARE -->
-
-      <a href="products.html#hardware" class="category-card">
-
-        <div class="category-icon">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-        </div>
-
-        <h3>Hardware & Supplies</h3>
-
-        <p>
-          Hardware, sanitary, office, cleaning
-          and miscellaneous supplies.
-        </p>
-
-        <span>
-          Explore Category
-          <i class="fa-solid fa-arrow-right"></i>
-        </span>
-
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= FEATURED PRODUCTS ================= -->
-
-<section class="section featured-section">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div>
-        <span class="section-label">FEATURED PRODUCTS</span>
-
-        <h2>
-          Safety Products
-          <span>You Can Rely On</span>
-        </h2>
-      </div>
-
-      <a href="products.html" class="outline-button">
-        View All Products
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
-
-    </div>
-
-
-    <div class="product-grid">
-
-
-      <!-- HELMET -->
-
-      <div class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="images/products/safety-helmet.jpg"
-            alt="Safety Helmet">
-
-          <span>SAFETY</span>
-
-        </div>
-
-        <div class="product-info">
-
-          <h3>Safety Helmets</h3>
-
-          <p>
-            Protective safety helmets suitable
-            for industrial and construction environments.
-          </p>
-
-          <a href="contact.html?product=Safety%20Helmet">
+          <a href="https://wa.me/923073284606"
+             class="button button-outline">
             Request a Quote
-            <i class="fa-solid fa-arrow-right"></i>
           </a>
-
         </div>
-
       </div>
 
-
-      <!-- GLOVES -->
-
-      <div class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="images/products/safety-gloves.jpg"
-            alt="Safety Gloves">
-
-          <span>SAFETY</span>
-
-        </div>
-
-        <div class="product-info">
-
-          <h3>Safety Gloves</h3>
-
-          <p>
-            Protective gloves for industrial,
-            mechanical and workplace applications.
-          </p>
-
-          <a href="contact.html?product=Safety%20Gloves">
-            Request a Quote
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-
-        </div>
-
+      <div class="hero-image">
+        <img src="images/products/02_Valves.png"
+             alt="Industrial valves supplied by OAG">
       </div>
-
-
-      <!-- REFLECTIVE JACKET -->
-
-      <div class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="images/products/reflective-jacket.jpg"
-            alt="Reflective Safety Jacket">
-
-          <span>SAFETY</span>
-
-        </div>
-
-        <div class="product-info">
-
-          <h3>Reflective Jackets</h3>
-
-          <p>
-            High-visibility reflective jackets
-            for workplace and site safety.
-          </p>
-
-          <a href="contact.html?product=Reflective%20Jacket">
-            Request a Quote
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- HARNESS -->
-
-      <div class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="images/products/safety-harness.jpg"
-            alt="Safety Harness">
-
-          <span>SAFETY</span>
-
-        </div>
-
-        <div class="product-info">
-
-          <h3>Safety Harnesses</h3>
-
-          <p>
-            Safety harness solutions for working
-            at height and industrial applications.
-          </p>
-
-          <a href="contact.html?product=Safety%20Harness">
-            Request a Quote
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- FIRE EXTINGUISHER -->
-
-      <div class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="images/products/fire-extinguisher.jpg"
-            alt="Fire Extinguisher">
-
-          <span>FIRE SAFETY</span>
-
-        </div>
-
-        <div class="product-info">
-
-          <h3>Fire Extinguishers</h3>
-
-          <p>
-            Fire fighting equipment including
-            extinguisher supply and refilling.
-          </p>
-
-          <a href="contact.html?product=Fire%20Extinguisher">
-            Request a Quote
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- GOGGLES -->
-
-      <div class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="images/products/goggles-face-shield.jpg"
-            alt="Safety Goggles and Face Shield">
-
-          <span>SAFETY</span>
-
-        </div>
-
-        <div class="product-info">
-
-          <h3>Goggles & Face Shields</h3>
-
-          <p>
-            Eye and face protection products
-            for industrial workplace safety.
-          </p>
-
-          <a href="contact.html?product=Goggles%20and%20Face%20Shield">
-            Request a Quote
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-
-        </div>
-
-      </div>
-
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-<!-- ================= WHY CHOOSE US ================= -->
-
-<section class="section why-section">
-
-  <div class="container">
-
-    <div class="section-heading center">
-
-      <span class="section-label">WHY OAG</span>
-
-      <h2>
-        Built Around Your
-        <span>Requirements</span>
-      </h2>
-
-      <p>
-        We focus on dependable products, professional service
-        and solutions that support our customers' operations.
-      </p>
-
-    </div>
-
-
-    <div class="why-grid">
-
-      <div class="why-card">
-        <i class="fa-solid fa-medal"></i>
-        <h3>Quality Products</h3>
-        <p>
-          Reliable products selected to meet
-          business and industrial requirements.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <i class="fa-solid fa-tags"></i>
-        <h3>Competitive Prices</h3>
-        <p>
-          Practical and competitive supply
-          solutions for different requirements.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <i class="fa-solid fa-truck-fast"></i>
-        <h3>Reliable Supply</h3>
-        <p>
-          Dependable supply support for routine
-          and bulk requirements.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <i class="fa-solid fa-clock"></i>
-        <h3>On-Time Delivery</h3>
-        <p>
-          We understand the importance of
-          timely industrial supply.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <i class="fa-solid fa-user-tie"></i>
-        <h3>Professional Service</h3>
-        <p>
-          Customer-focused communication and
-          professional project support.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <i class="fa-solid fa-sliders"></i>
-        <h3>Customized Solutions</h3>
-        <p>
-          Flexible solutions according to
-          customer requirements and specifications.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= INDUSTRIES ================= -->
-
-<section class="industries-section">
-
-  <div class="container">
-
-    <div class="section-heading light center">
-
-      <span class="section-label">INDUSTRIES WE SERVE</span>
-
-      <h2>
-        Supporting Businesses Across
-        <span>Multiple Industries</span>
-      </h2>
-
-    </div>
-
-
-    <div class="industry-grid">
-
+  <section id="about">
+    <div class="container about-grid">
       <div>
-        <i class="fa-solid fa-industry"></i>
-        <span>Manufacturing</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-helmet-safety"></i>
-        <span>Construction</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-shirt"></i>
-        <span>Textile</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-boxes-stacked"></i>
-        <span>Packaging</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-warehouse"></i>
-        <span>Warehouses</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-oil-well"></i>
-        <span>Oil & Gas</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-gears"></i>
-        <span>Engineering</span>
-      </div>
-
-      <div>
-        <i class="fa-solid fa-building"></i>
-        <span>Corporate</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= CTA ================= -->
-
-<section class="cta-section">
-
-  <div class="container cta-content">
-
-    <div>
-
-      <span class="section-label">NEED A SUPPLY SOLUTION?</span>
-
-      <h2>
-        Tell Us What You Need.
-        <span>We'll Help You Find It.</span>
-      </h2>
-
-      <p>
-        Contact OAG Services & Traders for industrial,
-        safety, packaging and general supply requirements.
-      </p>
-
-    </div>
-
-    <div class="cta-buttons">
-
-      <a href="contact.html" class="btn btn-white">
-        Get a Quote
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
-
-      <a href="https://wa.me/923073284606" class="btn btn-whatsapp" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp Us
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= CONTACT PREVIEW ================= -->
-
-<section class="section contact-preview">
-
-  <div class="container">
-
-    <div class="section-heading center">
-
-      <span class="section-label">CONTACT OAG</span>
-
-      <h2>
-        Let's Work
-        <span>Together</span>
-      </h2>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-
-        <i class="fa-solid fa-phone"></i>
-
-        <h3>Call Us</h3>
-
-        <p>0307-3284606</p>
-        <p>0301-7614607</p>
-
-        <a href="tel:+923073284606">
-          Call Now
-        </a>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <i class="fa-solid fa-envelope"></i>
-
-        <h3>Email Us</h3>
-
-        <p>oagsat@gmail.com</p>
-
-        <a href="mailto:oagsat@gmail.com">
-          Send Email
-        </a>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-        <h3>WhatsApp</h3>
-
-        <p>Chat directly with OAG</p>
-
-        <a href="https://wa.me/923073284606" target="_blank">
-          Start Chat
-        </a>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        <h3>Main Office</h3>
+        <span class="label">About OAG</span>
+        <h2>Growing together with our customers.</h2>
 
         <p>
-          Block Y, Satellite Town,
-          Sadiqabad, Rahim Yar Khan
+          Established in 2013, OAG Services & Traders is a general
+          order supplier and industrial services provider. We provide
+          flexible, reliable and customer-focused solutions.
         </p>
 
-        <a href="contact.html">
-          View Locations
-        </a>
-
+        <ul class="check-list">
+          <li>Quality industrial products</li>
+          <li>Competitive prices</li>
+          <li>Timely delivery</li>
+          <li>Technical support</li>
+          <li>Customer satisfaction</li>
+        </ul>
       </div>
 
-    </div>
+      <div class="card card-content">
+        <h3>Our Mission</h3>
+        <p>
+          To become the preferred choice of customers by delivering
+          reliable products and services and building enduring
+          business relationships.
+        </p>
 
-  </div>
+        <br>
 
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-  <div class="container footer-grid">
-
-
-    <div class="footer-about">
-
-      <div class="footer-logo">
-
-        <img src="images/logo.png" alt="OAG Services & Traders">
-
-        <div>
-          <strong>OAG</strong>
-          <span>SERVICES & TRADERS</span>
-        </div>
-
+        <h3>Our Vision</h3>
+        <p>
+          To anticipate, recognize and surpass customer expectations
+          in industrial supplies and services.
+        </p>
       </div>
-
-      <p>
-        Reliable industrial, safety, electrical,
-        mechanical, packaging and general order
-        supply solutions.
-      </p>
-
-      <div class="socials">
-
-        <a href="#">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-
-        <a href="https://wa.me/923073284606" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <a href="#">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-
-      </div>
-
     </div>
+  </section>
 
-
-    <div>
-
-      <h3>Quick Links</h3>
-
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html">Products</a>
-      <a href="services.html">Services</a>
-      <a href="industries.html">Industries</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-
-    </div>
-
-
-    <div>
-
-      <h3>Products</h3>
-
-      <a href="products.html#safety">Safety Equipment</a>
-      <a href="products.html#electrical">Electrical</a>
-      <a href="products.html#mechanical">Mechanical</a>
-      <a href="products.html#fire">Fire Fighting</a>
-      <a href="products.html#packaging">Packaging</a>
-      <a href="products.html#hardware">Hardware & Supplies</a>
-
-    </div>
-
-
-    <div>
-
-      <h3>Contact</h3>
-
-      <p>
-        <i class="fa-solid fa-phone"></i>
-        0307-3284606
-      </p>
-
-      <p>
-        <i class="fa-solid fa-phone"></i>
-        0301-7614607
-      </p>
-
-      <p>
-        <i class="fa-solid fa-envelope"></i>
-        oagsat@gmail.com
-      </p>
-
-      <p>
-        <i class="fa-solid fa-location-dot"></i>
-        Sadiqabad, Rahim Yar Khan
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <div class="footer-bottom">
-
+  <section class="soft-section" id="products">
     <div class="container">
+      <div class="section-heading">
+        <span class="label">Industrial Products</span>
+        <h2>Products selected for your application</h2>
+        <p>
+          Products can be supplied according to size, material,
+          pressure class, temperature and process requirements.
+        </p>
+      </div>
 
-      <p>
-        © 2026 OAG Services & Traders. All Rights Reserved.
-      </p>
+      <div class="grid-three">
+        <article class="card">
+          <img src="images/products/01_Industrial_MS_SS_Pipe_Fittings.png"
+               alt="MS and stainless-steel pipes and fittings">
+          <div class="card-content">
+            <h3>MS/SS Pipes & Fittings</h3>
+            <p>Elbows, tees, reducers, couplings and piping components.</p>
+          </div>
+        </article>
 
-      <p>
-        Industrial & General Supply Solutions
-      </p>
+        <article class="card">
+          <img src="images/products/02_Valves.png" alt="Industrial valves">
+          <div class="card-content">
+            <h3>Industrial Valves</h3>
+            <p>Gate, globe, ball and butterfly-style valves.</p>
+          </div>
+        </article>
 
+        <article class="card">
+          <img src="images/products/03_Flow_Meters.png" alt="Flow meters">
+          <div class="card-content">
+            <h3>Flow Meters</h3>
+            <p>Industrial measurement and process-flow instruments.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/products/04_Control_Valves.png"
+               alt="Control valves">
+          <div class="card-content">
+            <h3>Control Valves</h3>
+            <p>Automatic flow and pressure regulation solutions.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/products/05_Other_Instruments_Accessories.png"
+               alt="Industrial instruments">
+          <div class="card-content">
+            <h3>Instruments & Accessories</h3>
+            <p>Gauges, transmitters, sensors, probes and fittings.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/products/06_Flanges_Bolts_Gaskets.png"
+               alt="Flanges bolts and gaskets">
+          <div class="card-content">
+            <h3>Flanges, Bolts & Gaskets</h3>
+            <p>Industrial piping joining and sealing components.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-heading">
+        <span class="label">Our Services</span>
+        <h2>Technical support that keeps work moving</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service">
+          <h3>PWHT & Heat Treatment</h3>
+          <ul>
+            <li>Post-weld heat treatment</li>
+            <li>Pre-weld heat treatment</li>
+            <li>PWHT machine sale and rental</li>
+            <li>Temperature recorders and controllers</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>Repair & Maintenance</h3>
+          <ul>
+            <li>PWHT and NDT equipment</li>
+            <li>Temperature-control equipment</li>
+            <li>Ultrasonic testing machines</li>
+            <li>Radiographic testing equipment</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>Workshop Services</h3>
+          <ul>
+            <li>Industrial fabrication</li>
+            <li>Milling, lathe and drilling</li>
+            <li>Welding and iron work</li>
+            <li>Machine-shop services</li>
+          </ul>
+        </div>
+
+        <div class="service">
+          <h3>Manpower Services</h3>
+          <ul>
+            <li>Welding and QC inspectors</li>
+            <li>QA/QC and piping engineers</li>
+            <li>NDT technicians</li>
+            <li>Welders and fabricators</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft-section" id="experience">
+    <div class="container">
+      <div class="section-heading">
+        <span class="label">Experience</span>
+        <h2>Serving demanding industrial sectors</h2>
+      </div>
+
+      <div class="industries">
+        <span class="industry">Oil & Gas</span>
+        <span class="industry">Chemical & Petrochemical</span>
+        <span class="industry">Power & Cement</span>
+        <span class="industry">Fertilizer</span>
+        <span class="industry">Engineering & Construction</span>
+        <span class="industry">Packaging & Processing</span>
+        <span class="industry">Textile</span>
+      </div>
+
+      <br><br>
+
+      <div class="section-heading">
+        <h2>Selected clients</h2>
+      </div>
+
+      <div class="industries">
+        <span class="industry">Descon Engineering Limited</span>
+        <span class="industry">Izhar Steel (Pvt.) Ltd.</span>
+        <span class="industry">Ravi Green Engineering</span>
+        <span class="industry">AJC Engineering</span>
+        <span class="industry">Testing Specialist Pvt. Ltd.</span>
+        <span class="industry">Albario Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="management">
+    <div class="container">
+      <div class="section-heading">
+        <span class="label">Management</span>
+        <h2>Experienced industrial leadership</h2>
+      </div>
+
+      <div class="grid-three" style="grid-template-columns: repeat(2,1fr);">
+        <article class="card management-card">
+          <small>Chief Executive Officer</small>
+          <h3>Mr. Abdul Ghafoor Haidri</h3>
+          <p>
+            Heat Treatment Specialist with more than 32 years of
+            experience with national and multinational companies.
+          </p>
+          <p><strong>Phone:</strong> +92 301 7614607</p>
+        </article>
+
+        <article class="card management-card">
+          <small>Managing Director</small>
+          <h3>Engr. Amir Ali Ghafoor</h3>
+          <p>
+            B.E. Mechanical and MBA Executive (Management).
+            Managing Director since May 2014.
+          </p>
+          <p><strong>Phone:</strong> +92 307 3284606</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft-section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h2>Contact OAG</h2>
+
+        <div class="office">
+          <strong>Main Office – Sadiqabad</strong><br>
+          Plot #17/D, Street No. 03, Block Y, Satellite Town,
+          District Rahim Yar Khan
+        </div>
+
+        <div class="office">
+          <strong>Karachi Branch</strong><br>
+          Plot #11, Street #12, Qayoomabad, Korangi Road
+        </div>
+
+        <div class="office">
+          <strong>Lahore Branch</strong><br>
+          Bhutta Colony, Sundar Adda, Multan Road
+        </div>
+
+        <div class="office">
+          <strong>Faisalabad Branch</strong><br>
+          Plot #100, Street #3, Al-Fayyaz Colony
+        </div>
+
+        <div class="office">
+          0307-3284606<br>
+          0301-7614607<br>
+          oagsat@gmail.com
+        </div>
+      </div>
+
+      <div class="card card-content">
+        <h2>Request a Quotation</h2>
+
+        <form class="quote-form" id="quoteForm">
+          <input type="text" id="name" placeholder="Your name" required>
+          <input type="text" id="company" placeholder="Company name">
+          <input type="tel" id="phone" placeholder="Phone number" required>
+
+          <select id="requirement">
+            <option>Industrial Product</option>
+            <option>PWHT / Heat Treatment</option>
+            <option>Repair & Maintenance</option>
+            <option>Manpower Services</option>
+            <option>General Order Supply</option>
+          </select>
+
+          <textarea id="details"
+                    placeholder="Product, quantity, specification and delivery location"
+                    required></textarea>
+
+          <button type="submit" class="button button-primary">
+            Send Request on WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>OAG Services & Traders</h3>
+        <p>
+          Your one-stop solution for industrial supplies,
+          technical services and manpower support.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#management">Management</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+923073284606">+92 307 3284606</a>
+        <a href="tel:+923017614607">+92 301 7614607</a>
+        <a href="mailto:oagsat@gmail.com">oagsat@gmail.com</a>
+      </div>
     </div>
 
+    <div class="copyright">
+      © <span id="year"></span> OAG Services & Traders.
+      All rights reserved.
+    </div>
   </div>
-
 </footer>
 
-
-<!-- ================= FLOATING WHATSAPP ================= -->
-
-<a
-  href="https://wa.me/923073284606?text=Hello%20OAG%20Services%20%26%20Traders%2C%20I%20would%20like%20to%20request%20a%20quote."
-  class="whatsapp-float"
-  target="_blank"
-  aria-label="Contact OAG on WhatsApp">
-
-  <i class="fa-brands fa-whatsapp"></i>
-
-  <span>Chat on WhatsApp</span>
-
+<a class="whatsapp"
+   href="https://wa.me/923073284606?text=Hello%20OAG%20Services%20%26%20Traders%2C%20I%20would%20like%20to%20request%20a%20quotation."
+   target="_blank"
+   rel="noopener">
+  WhatsApp
 </a>
 
+<script>
+  function toggleMenu() {
+    document.getElementById("mainMenu").classList.toggle("open");
+  }
 
-<script src="script.js"></script>
+  document.querySelectorAll("nav a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      document.getElementById("mainMenu").classList.remove("open");
+    });
+  });
+
+  document.getElementById("quoteForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const company = document.getElementById("company").value;
+    const phone = document.getElementById("phone").value;
+    const requirement = document.getElementById("requirement").value;
+    const details = document.getElementById("details").value;
+
+    const message =
+      "Quotation Request\n\n" +
+      "Name: " + name + "\n" +
+      "Company: " + company + "\n" +
+      "Phone: " + phone + "\n" +
+      "Requirement: " + requirement + "\n" +
+      "Details: " + details;
+
+    window.open(
+      "https://wa.me/923073284606?text=" + encodeURIComponent(message),
+      "_blank"
+    );
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
